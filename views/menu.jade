@@ -7,7 +7,6 @@ block content
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet' href='style.css')
-    script(src='script.js' defer='')
   body
     // Navigation bar för sidorna
     .navcontainer
@@ -22,18 +21,40 @@ block content
       .navitem-5
         a(href='myOrder.html') My Orders
       .navitem-6
-        img(style='width:50px; height:50px;' src='/images/shoppingcart.png')
+        img(style='width:50px; height:50px ;' src='/images/shoppingcart.png')
     // kroppen för varje sida
     .body
-      // För första sidan
       .displaySite
-        img(style='width: 300px; height: 200px;' src='/images/SoggyEats.png')
+        p  Menu
       br
-      .Infobody
-        //
-          <img class="slideshow"  src="/images/kaopad.png">
-          <img class="slideshow"  src="/images/guay.png">
-          <img class="slideshow"  src="/images/padthai.png">
+      .Menubox
+        .menuitem1
+          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/orange_chicken.png')
+          p 150kr
+        .menuitem2
+          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/guay.png')
+          p 150kr
+        .menuitem3
+          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/kaopad.png')
+          p 150kr
+        .menuitem4
+          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/padthai.png')
+          p 150kr
+        .menuitem5
+          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/tom-yum-goong.png')
+          p 150kr
+        .menuitem6
+          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/Minced-Pork-Stir-Fried-with-Thai-Basil.png')
+          p 150kr
+      .button
+        img.parentPic(src='http://lorempixel.com/400/200/sports/1')
+        section.speech
+          .row
+            ul.list-group
+              li.list-group-item
+                span.badge 14
+                |                 Pad thai kostar 120kr
+          .col-md-2
     // footer
     .footer
       .footitem1
@@ -59,5 +80,3 @@ block content
         p Registrera dig här!
         p Varukorg
         p Profil
-    // fixa med blur på hemsidan
-    // https://www.asiahighlights.com/southeast-asia/top-dishes

@@ -7,12 +7,11 @@ block content
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet' href='style.css')
-    script(src='script.js' defer='')
   body
     // Navigation bar för sidorna
     .navcontainer
       .navitem-1
-        img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
+        img(style='width: 150px; height: 105px;' "='' src='/images/SoggyEats.png')
       .navitem-2
         a(href='index.html') Home
       .navitem-3
@@ -22,18 +21,28 @@ block content
       .navitem-5
         a(href='myOrder.html') My Orders
       .navitem-6
-        img(style='width:50px; height:50px;' src='/images/shoppingcart.png')
+        img(style='width:50px; height:50px ;' src='/images/shoppingcart.png')
     // kroppen för varje sida
     .body
-      // För första sidan
       .displaySite
-        img(style='width: 300px; height: 200px;' src='/images/SoggyEats.png')
-      br
-      .Infobody
-        //
-          <img class="slideshow"  src="/images/kaopad.png">
-          <img class="slideshow"  src="/images/guay.png">
-          <img class="slideshow"  src="/images/padthai.png">
+        p  Kontakta oss
+      .contactbox
+        .medlemskapsinfo
+          p Medlemskaps info: -----
+        form
+          label(for='fnamn') förnamn
+          input#enamn(type='text' name='ename')
+          label(for='enamn') efternamn
+          input#fnamn(type='text' name='fname')
+          label(for='gmail') Gmail
+          input#gmail(type='text' name='gmail')
+          label(for='telfon') Telefonnummer
+          input#telfon(type='text' name='telfon')
+          input#medlem(type='checkbox' name='medlem' value='Medlem')
+          label(for='medlem') Medlemskap
+          input(type='checkbox' id='återställ' name='återställ' value='återställ')
+          label(for='återställ') Återställ
+          input#skicka(type='submit' name='skicka' value='skicka')
     // footer
     .footer
       .footitem1
@@ -59,5 +68,3 @@ block content
         p Registrera dig här!
         p Varukorg
         p Profil
-    // fixa med blur på hemsidan
-    // https://www.asiahighlights.com/southeast-asia/top-dishes
