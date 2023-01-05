@@ -1,2 +1,2 @@
 # Dynamic-Foodshop 
-dynamic version of a FoodShop
+dynamic version of a Online Food Shop
