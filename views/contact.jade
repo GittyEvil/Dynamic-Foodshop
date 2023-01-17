@@ -7,43 +7,93 @@ block content
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet' href='style.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
   body
     // Navigation bar för sidorna
     .navcontainer
+      .navitem-0
+        img(style='width: 50px; height: 50px;' src='/images/character.png')
       .navitem-1
-        img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
+        a(href='/contact') Contacts
       .navitem-2
         a(href='/') Home
       .navitem-3
-        a(href='/contact') Contacts
+        a(href='/')
+          img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
       .navitem-4
         a(href='/menu') Menu
       .navitem-5
         a(href='/myOrder') My Orders
       .navitem-6
-        img(style='width:50px; height:50px ;' src='/images/shoppingcart.png')
+        img(style='width:50px; height:50px ;' src='/images/shop.png')
     // kroppen för varje sida
     .body
       .displaySite
         p  Kontakta oss
+      // hela boxen som håller allt för contacts
       .contactbox
         .medlemskapsinfo
-          p Medlemskaps info: -----
-        form
-          label(for='fnamn') förnamn
-          input#enamn(type='text' name='ename')
-          label(for='enamn') efternamn
-          input#fnamn(type='text' name='fname')
-          label(for='gmail') Gmail
-          input#gmail(type='text' name='gmail')
-          label(for='telfon') Telefonnummer
-          input#telfon(type='text' name='telfon')
-          input#medlem(type='checkbox' name='medlem' value='Medlem')
-          label(for='medlem') Medlemskap
-          input(type='checkbox' id='återställ' name='återställ' value='återställ')
-          label(for='återställ') Återställ
-          input#skicka(type='submit' name='skicka' value='skicka')
-    // footer
+          p
+            | Medlemskaps info: 
+            br
+            |                 Med vårat medlemmskap så får du följande bonusar:
+            br
+            |                 Varje vecka så får du rabatt på en slumpmässig måltid.
+            br
+            |                 Mindre kostnad på frakt, varierar beroende på vart du bor.
+            br
+        // själva kontakt blocket
+        section#contact
+          .contact-wrapper
+            form
+              div
+                div
+                  input#medlem(type='checkbox' name='medlem' value='medlem')
+                  label(for='medlem') medlemskapsinfo
+              div
+                div
+                  input#name.form-control(type='text' placeholder='Namn' name='name' value='' required='')
+              div
+                div
+                  input#email.form-control(type='email' placeholder='Email' name='email' value='' required='')
+              textarea.form-control(rows='10' placeholder='Meddelande' name='message' required='')
+              div
+                input.form-control(type='reset')
+              button#submit.send-button(type='submit' value='SEND')
+                .alt-send-button
+                  i
+                  span.send-text SEND
+            // mail,nummer ifall man vill ta kontakt snabbare
+            .direct-contact-container
+              ul.contact-list
+                li.list-item
+                  i.fa.fa-map-marker.fa-2x
+                    span.contact-text.place Soggyland
+                li.list-item
+                  i.fa.fa-phone.fa-2x
+                    span.contact-text.phone
+                      a(href='tel:1-212-555-5555') 073492469
+                li.list-item
+                  i.fa.fa-envelope.fa-2x
+                    span.contact-text.gmail
+                      a(href='mailto:#') Soggyeats.info@gmail.com
+    // social knapparna
+    .wrapper
+      .icon.facebook
+        .tooltip
+          | Facebook
+        span
+          i.fab.fa-facebook-f
+      .icon.twitter
+        .tooltip
+          | Twitter
+        span
+          i.fab.fa-twitter
+      .icon.instagram
+        .tooltip
+          | Instagram
+        span
+          i.fab.fa-instagram
     .footer
       .footitem1
         p Kontakt:
@@ -65,6 +115,7 @@ block content
         p Etherium
       .footitem4
         p För kunden:
-        p Registrera dig här!
+        a(href='#Förnamn') Registrera dig här!
         p Varukorg
         p Profil
+// footer

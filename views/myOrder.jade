@@ -7,33 +7,60 @@ block content
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet' href='style.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
   body
     // Navigation bar för sidorna
     .navcontainer
+      .navitem-0
+        img(style='width: 50px; height: 50px;' src='/images/character.png')
       .navitem-1
-        img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
+        a(href='/contacts') Contacts
       .navitem-2
         a(href='/') Home
       .navitem-3
-        a(href='/contact') Contacts
+        a(href='/')
+          img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
       .navitem-4
         a(href='/menu') Menu
       .navitem-5
         a(href='/myOrder') My Orders
       .navitem-6
-        img(style='width:50px; height:50px ;' src='/images/shoppingcart.png')
+        img(style='width:50px; height:50px ;' src='/images/shop.png')
     // kroppen för varje sida
     .body
       .displaySite
         p  Dina beställningar
+      // visar en enkel beställning
       .Orderbox
         .orderlist
-          p Dina beställningar:
+          p(style='margin: 20px;')
+            | Dina beställningar:
+            br
+            |  Pad Thai x2
           br
-          p Ordernummer: 
-        .orderlist
-          .beställning
-    // footer
+          p(style=' margin: 400px; display: flex; justify-content: flex-end;')
+            | Total:240kr
+        .orderlist1
+          .(style='margin: 20px;' class='beställning')
+            img(style='width:400px; height:300px; border-radius: 25px;' src='/images/padthai.png')
+            p(style='margin: 20px;') Ordernummer: 4fN456hpg566
+    // social media knapparna
+    .wrapper
+      .icon.facebook
+        .tooltip
+          | Facebook
+        span
+          i.fab.fa-facebook-f
+      .icon.twitter
+        .tooltip
+          | Twitter
+        span
+          i.fab.fa-twitter
+      .icon.instagram
+        .tooltip
+          | Instagram
+        span
+          i.fab.fa-instagram
     .footer
       .footitem1
         p Kontakt:
@@ -55,6 +82,7 @@ block content
         p Etherium
       .footitem4
         p För kunden:
-        p Registrera dig här!
+        a(href='contact.html') Registrera dig här!
         p Varukorg
         p Profil
+// footer

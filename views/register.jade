@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+ head 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet' href='style.css')
+ body 
+ form
+              div
+                div
+                  input#name.form-control(type='text' placeholder='username' name='username' value='' required='')
+              div
+                div
+                  input#email.form-control(type='text' placeholder='password' name='password' value='' required='')
+              div
+                input.form-control(type='reset')
+              button#submit.send-button(type='submit' value='SEND')
+                .alt-send-button
+                  i
+                  span.send-text SEND

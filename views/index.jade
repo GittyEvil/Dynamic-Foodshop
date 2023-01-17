@@ -8,32 +8,75 @@ block content
     title Document
     link(rel='stylesheet' href='style.css')
     script(src='script.js' defer='')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
   body
     // Navigation bar för sidorna
     .navcontainer
+      .navitem-0
+        a(href='/register')
+          img(style='width: 50px; height: 50px;' src='/images/character.png')
       .navitem-1
-        img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
+        a(href='/contact') Contacts
       .navitem-2
         a(href='/') Home
       .navitem-3
-        a(href='/contact') Contacts
+        a(href='/')
+          img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
       .navitem-4
         a(href='/menu') Menu
       .navitem-5
         a(href='/myOrder') My Orders
       .navitem-6
-        img(style='width:50px; height:50px;' src='/images/shoppingcart.png')
+        img(style='width:50px; height:50px ;' src='/images/shop.png')
     // kroppen för varje sida
     .body
       // För första sidan
       .displaySite
-        img(style='width: 300px; height: 200px;' src='/images/SoggyEats.png')
-      br
-      .Infobody
-        //
-          <img class="slideshow"  src="/images/kaopad.png">
-          <img class="slideshow"  src="/images/guay.png">
-          <img class="slideshow"  src="/images/padthai.png">
+      // själva ifon blocket
+      .info-card
+        // inputs är för knapparna så man kan byta sida
+        input#tap-1(type='radio' name='select' checked='')
+        input#tap-2(type='radio' name='select')
+        input#imgTap(type='checkbox')
+        .sliders
+          label.tap.tap-1(for='tap-1')
+          label.tap.tap-2(for='tap-2')
+        // första sidan av info blocket
+        .inner-part
+          label.img(for='imgTap')
+            img.img-1(src='/images/padthai.png')
+          .content.content-1
+            .title
+              | Soggy Eats
+            .text
+              | Vi är en Online Foodshop där du kan köpa massa soggy Asiatisk mat där vi leverar direkt till din dörr.
+            button Read more
+        // andra sidan av info blocket
+        .inner-part
+          label.img(for='imgTap')
+            img.img-2(src='/images/food.png')
+          .content.content-2
+            .title
+              | Mer info
+            .text
+              | Vi är även ett företag som älskar mat
+    // social media knapparna, gör inget just nu men kan lägga på länkar
+    .wrapper
+      .icon.facebook
+        .tooltip
+          | Facebook
+        span
+          i.fab.fa-facebook-f
+      .icon.twitter
+        .tooltip
+          | Twitter
+        span
+          i.fab.fa-twitter
+      .icon.instagram
+        .tooltip
+          | Instagram
+        span
+          i.fab.fa-instagram
     // footer
     .footer
       .footitem1
@@ -56,8 +99,7 @@ block content
         p Etherium
       .footitem4
         p För kunden:
-        p Registrera dig här!
+        a(href='contact.html') Registrera dig här!
         p Varukorg
         p Profil
-    // fixa med blur på hemsidan
     // https://www.asiahighlights.com/southeast-asia/top-dishes

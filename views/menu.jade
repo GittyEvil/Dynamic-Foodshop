@@ -7,55 +7,73 @@ block content
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet' href='style.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
   body
     // Navigation bar för sidorna
     .navcontainer
+      .navitem-0
+        img(style='width: 50px; height: 50px;' src='/images/character.png')
       .navitem-1
-        img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
+        a(href='/contact') Contacts
       .navitem-2
         a(href='/') Home
       .navitem-3
-        a(href='/contact') Contacts
+        a(href='/')
+          img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
       .navitem-4
         a(href='/menu') Menu
       .navitem-5
         a(href='/myOrder') My Orders
       .navitem-6
-        img(style='width:50px; height:50px ;' src='/images/shoppingcart.png')
+        img(style='width:50px; height:50px ;' src='/images/shop.png')
     // kroppen för varje sida
     .body
       .displaySite
         p  Menu
       br
+      // menu sidans maträtter
       .Menubox
         .menuitem1
           img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/orange_chicken.png')
-          p 150kr
+          .display
+            p.text 150kr
         .menuitem2
           img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/guay.png')
-          p 150kr
+          .display
+            p.text 150kr
         .menuitem3
           img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/kaopad.png')
-          p 150kr
+          .display
+            p.text 150kr
         .menuitem4
           img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/padthai.png')
-          p 150kr
+          .display
+            p.text 150kr
         .menuitem5
           img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/tom-yum-goong.png')
-          p 150kr
+          .display
+            p.text 150kr
         .menuitem6
           img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/Minced-Pork-Stir-Fried-with-Thai-Basil.png')
-          p 150kr
-      .button
-        img.parentPic(src='http://lorempixel.com/400/200/sports/1')
-        section.speech
-          .row
-            ul.list-group
-              li.list-group-item
-                span.badge 14
-                |                 Pad thai kostar 120kr
-          .col-md-2
-    // footer
+          .display
+            p.text 150kr
+    // social media knapparna
+    .wrapper
+      .icon.facebook
+        .tooltip
+          | Facebook
+        span
+          i.fab.fa-facebook-f
+      .icon.twitter
+        .tooltip
+          | Twitter
+        span
+          i.fab.fa-twitter
+      .icon.instagram
+        .tooltip
+          | Instagram
+        span
+          i.fab.fa-instagram
     .footer
       .footitem1
         p Kontakt:
@@ -77,6 +95,7 @@ block content
         p Etherium
       .footitem4
         p För kunden:
-        p Registrera dig här!
+        a(href='contact.html') Registrera dig här!
         p Varukorg
         p Profil
+// footer
