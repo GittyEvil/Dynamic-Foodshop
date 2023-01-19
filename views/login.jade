@@ -2,23 +2,9 @@ extends layout
 
 block content
  head 
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title Document
-    link(rel='stylesheet' href='style.css')
  body 
- form
-          label(for='fnamn') förnamn
-          input#enamn(type='text' name='ename')
-          label(for='enamn') efternamn
-          input#fnamn(type='text' name='fname')
-          label(for='gmail') Gmail
-          input#gmail(type='text' name='gmail')
-          label(for='telfon') Telefonnummer
-          input#telfon(type='text' name='telfon')
-          input#medlem(type='checkbox' name='medlem' value='Medlem')
-          label(for='medlem') Medlemskap
-          input(type='checkbox' id='återställ' name='återställ' value='återställ')
-          label(for='återställ') Återställ
-          input#skicka(type='submit' name='skicka' value='skicka')
+    form(action="/login", method="post")
+        input(type="text", placeholder="Enter Username", name="username", required)
+        input(type="password", placeholder="Enter Password", name="password", required)
+        button(type="submit") Login
+    p= errorMsg
