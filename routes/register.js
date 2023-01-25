@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,21 +9,27 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next){
-  var jsonData = null
+  var newUsers = null
 
   try {
-      var data = fs.readFileSync("C:\Users\adrian.stude\Documents\Prog2\Dynamic-Foodshop\\user.json", "utf8")
-      jsonData = JSON.parse(data);
-      console.log(jsonData[0])
-  } catch (error) {
-
+      var data = fs.readFileSync('C:\\Users\\adrian.stude\\Documents\\Prog2\\Dynamic-Foodshop\\user.json')
+      NewUsers = JSON.parse(data)
+  } catch (err) {
+      console.log('error')
   }
 
 
-  var username = (req.body.username);
-  var password = (req.body.password);
+  var AppendData = {
+    username : (req.body.username),
+    password : (req.body.password)
+  }
 
-  
+  newUsers.push(AppendData)
+
+  var sendNewData = JSON.stringify(newUsers)
+
+  fs.writeFileSync('user.json',sendNewData)
+  res.redirect('/login')
 
 });
 
