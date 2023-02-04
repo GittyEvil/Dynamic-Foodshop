@@ -12,25 +12,26 @@ router.post('/', function(req, res, next){
   var newUsers = null
 
   try {
-      var data = fs.readFileSync('C:\\Users\\adrian.stude\\Documents\\Prog2\\Dynamic-Foodshop\\user.json')
-      NewUsers = JSON.parse(data)
+      var data = fs.readFileSync('user.json')
+      newUsers = JSON.parse(data)
   } catch (err) {
       console.log('error')
+      return;
   }
 
 
-  var AppendData = {
-    username : (req.body.username),
-    password : (req.body.password)
+  var userInput = {
+    username: (req.body.username),
+    password: (req.body.password)
   }
 
-  newUsers.push(AppendData)
+  newUsers.push(userInput)
 
-  var sendNewData = JSON.stringify(newUsers)
+  let sendNewData = JSON.stringify(newUsers)
 
-  fs.writeFileSync('user.json',sendNewData)
+  fs.writeFileSync('user.json', sendNewData)
   res.redirect('/login')
-
+  return;
 });
 
 module.exports = router;

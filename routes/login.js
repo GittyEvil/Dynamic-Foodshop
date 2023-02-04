@@ -14,23 +14,24 @@ router.post('/', function(req, res, next){
   var jsonData = null
 
   try {
-      var data = fs.readFileSync("C:\\Users\\adrian.stude\\Documents\\Prog2\\Dynamic-Foodshop\\user.json", "utf8")
+      var data = fs.readFileSync("C:\\Users\\adrian.stude\\Documents\\Prog2\\Dynamic-Foodshop\\user.json","utf-8")
       jsonData = JSON.parse(data);
-      console.log(jsonData[0])
   } catch (error) {
-    console.log(error)
+    console.log('error')
+    return;
   }
-  
+
   var username = (req.body.username)
   var password = (req.body.password)
 
   for(i= 0; i < jsonData.length; i++) {
-    if(username == jsonData[i].username && jsonData[i].password == password)
-      res.redirect('/')
-    
+    if(username == jsonData[i].username && jsonData[i].password == password){
+        res.redirect("/")
+        return;
+    }
+    res.redirect("/");
   }
   
-
 });
 
 module.exports = router;
