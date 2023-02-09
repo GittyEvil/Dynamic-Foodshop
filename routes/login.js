@@ -6,7 +6,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+    if(req.session.userid){
+      res.redirect("/");
+  } else {
+      res.render("login");
+  }    
 });
 
 
@@ -26,12 +30,14 @@ router.post('/', function(req, res, next){
 
   for(i= 0; i < jsonData.length; i++) {
     if(username == jsonData[i].username && jsonData[i].password == password){
+      
+        req.session.userid = username;   
         res.redirect("/")
         return;
     }
-    res.redirect("/");
+    
   }
-  
+  res.render("/login");
 });
 
 module.exports = router;

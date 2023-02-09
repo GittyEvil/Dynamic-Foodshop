@@ -13,8 +13,18 @@ var myOrderRouter = require('./routes/myOrder');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var accountRouter = require('./routes/chooseaccount');
+var cartRouter = require('./routes/cart');
+
 
 var app = express();
+const oneDay = 1000 * 60 * 60 * 24;
+
+app.use(session({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false 
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,21 +44,13 @@ app.use('/myOrder', myOrderRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/chooseaccount', accountRouter);
+app.use('/cart', cartRouter);
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-const oneDay = 1000 * 60 * 60 * 24;
-
-app.use(session({
-    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-    saveUninitialized:true,
-    cookie: { maxAge: oneDay },
-    resave: false 
-}));
 
 // error handler
 app.use(function(err, req, res, next) {

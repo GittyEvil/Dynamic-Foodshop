@@ -18,8 +18,6 @@ block content
         a(href='/chooseaccount')
           img(style='width: 50px; height: 50px;' src='/images/character.png')
         .dropdown-content
-          a(href='/login') Logga in
-          a(href='/register') Registrera
           a(href='#') Profil
           a(href='#') Logga ut
       .navitem-1
@@ -34,7 +32,8 @@ block content
       .navitem-5
         a(href='/myOrder') My Orders
       .navitem-6
-        img(style='width:50px; height:50px ;' src='/images/shop.png')
+        a(href='/cart')
+          img(style='width:50px; height:50px ;' src='/images/shop.png')
     // kroppen för varje sida
     .body
       // För första sidan

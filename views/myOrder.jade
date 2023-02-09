@@ -12,7 +12,13 @@ block content
     // Navigation bar för sidorna
     .navcontainer
       .navitem-0
-        img(style='width: 50px; height: 50px;' src='/images/character.png')
+        a(href='/chooseaccount')
+      .dropdown
+        a(href='/chooseaccount')
+          img(style='width: 50px; height: 50px;' src='/images/character.png')
+        .dropdown-content
+          a(href='#') Profil
+          a(href='#') Logga ut
       .navitem-1
         a(href='/contacts') Contacts
       .navitem-2
@@ -25,7 +31,8 @@ block content
       .navitem-5
         a(href='/myOrder') My Orders
       .navitem-6
-        img(style='width:50px; height:50px ;' src='/images/shop.png')
+        a(href='/cart')
+          img(style='width:50px; height:50px ;' src='/images/shop.png')
     // kroppen för varje sida
     .body
       .displaySite

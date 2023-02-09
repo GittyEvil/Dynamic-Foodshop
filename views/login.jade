@@ -2,7 +2,8 @@ extends layout
 
 block content
  head 
- body 
+ body
+    a(href='/register') Registrera
     form(action="/login", method="post")
         input(type="text", placeholder="Enter Username", name="username", required)
         input(type="password", placeholder="Enter Password", name="password", required)
