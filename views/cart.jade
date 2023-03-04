@@ -8,9 +8,15 @@ block content
     link(rel='stylesheet' href='style.css')
     title Document
   body
-    .navbar
-      .navitem
-        p Varukorgen!
-      .navitem(style='margin-right: 10px;')
-        p Korg(x)
-    .cartbox
+    div#cart-header
+    h1 Cart
+    button#clear-cart-button(onclick="clearCart()") Clear cart
+  div#products-container
+    for product in result
+        div.product-container.cart
+          img.product-image(src=product.image[product.image.length - 1])
+          div.title-price-container
+            h3= product.title
+            h3 #{product.price} kr
+      else
+        p Cart is empty!

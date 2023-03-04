@@ -1,0 +1,10 @@
+[
+    {
+      "id": 3,
+      "title": "fried rice",
+      "description": "mat",
+      "price": 150,
+      "image": "C:\\Users\\adrian.stude\\Documents\\Prog2\\Dynamic-Foodshop\\public\\images\\kaopad.png",
+      "userId": "testUser"
+    }
+]

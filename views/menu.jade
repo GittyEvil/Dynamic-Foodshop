@@ -40,42 +40,20 @@ block content
       br
       // menu sidans maträtter
       .Menubox
-        .menuitem1
-          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/orange_chicken.png')
-          div
-          button(onclick=`addToCart(${JSON.stringify(product)})`) Add to cart
-          .display
-            p.text 150kr
-        .menuitem2
-          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/guay.png')
-          div
-          button(onclick=`addToCart(${JSON.stringify(product)})`) Add to cart
-          .display
-            p.text 150kr
-        .menuitem3
-          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/kaopad.png')
-          div
-          button(onclick=`addToCart(${JSON.stringify(product)})`) Add to cart
-          .display
-            p.text 150kr
-        .menuitem4
-          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/padthai.png')
-          div
-          button(onclick=`addToCart(${JSON.stringify(product)})`) Add to cart
-          .display
-            p.text 150kr
-        .menuitem5
-          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/tom-yum-goong.png')
-          div
-          button(onclick=`addToCart(${JSON.stringify(product)})`) Add to cart
-          .display
-            p.text 150kr
-        .menuitem6
-          img(style='width:370px ; height: 370px; margin-top: 5%;' src='/images/Minced-Pork-Stir-Fried-with-Thai-Basil.png')
-          div
-          button(onclick=`addToCart(${JSON.stringify(product)})`) Add to cart
-          .display
-            p.text 150kr
+          div#products-container
+            for product in products
+              div.product-container
+                img.product-image(src=product.image[product.image.length - 1])
+                div.title-price-container
+                  h3= product.title
+                  h3 $#{product.price}
+                div
+                  button(onclick=`addToCart(${JSON.stringify(product)})`) Add to cart
+            else
+              li sorry, no products!
+  
+  
+
     // social media knapparna
     .wrapper
       .icon.facebook
@@ -117,4 +95,5 @@ block content
         a(href='contact.html') Registrera dig här!
         p Varukorg
         p Profil
-// footer
+ footer
+ script(src="/javascripts/cart.js") 

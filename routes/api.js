@@ -7,7 +7,7 @@ router.get('/cart', function(req, res, next) {
   var result = []
 
   try {
-    var rawData = fs.readFileSync('products_in_cart.json');
+    var rawData = fs.readFileSync('cartitems.json');
     productsInCart = JSON.parse(rawData);
   } catch (err) {
     res.json({ message: 'Error when retrieving from database' })
@@ -23,7 +23,7 @@ router.get('/cart/clear', function(req, res, next) {
   var result = []
 
   try {
-    var rawData = fs.readFileSync('products_in_cart.json');
+    var rawData = fs.readFileSync('cartitems.json');
     productsInCart = JSON.parse(rawData);
   } catch (err) {
     res.json({ message: 'Error when retrieving from database' })
@@ -33,9 +33,13 @@ router.get('/cart/clear', function(req, res, next) {
   result = productsInCart.filter(item => item.userId != userId);
   let dataToSave = JSON.stringify(result);
 
-  fs.writeFileSync('products_in_cart.json', dataToSave);
+  fs.writeFileSync('cartitems.json', dataToSave);
 
   res.json({ message: 'Success' })
 });
+
+router.post('',function(req,res,next) {
+  
+})
 
 module.exports = router;

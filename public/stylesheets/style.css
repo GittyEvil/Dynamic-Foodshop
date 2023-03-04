@@ -437,7 +437,7 @@ input[type="checkbox"]{
 .menuitem1 {
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 300px;
   width: 30%;
   padding-bottom: 20%; 
   margin-bottom: 2%;
@@ -448,7 +448,7 @@ input[type="checkbox"]{
   display: flex;
   justify-content: center;
   width: 200px;
-  height: 200px;
+  height: 300px;
   width: 30%;
   padding-bottom: 20%; 
   margin-bottom: 2%;
@@ -459,7 +459,7 @@ input[type="checkbox"]{
   display: flex;
   justify-content: center;
   width: 200px;
-  height: 200px;
+  height: 300px;
   width: 30%;
   padding-bottom: 20%; 
   margin-bottom: 2%;
@@ -469,7 +469,7 @@ input[type="checkbox"]{
   display: flex;
   justify-content: center;
   width: 200px;
-  height: 200px;
+  height: 300px;
   width: 30%;
   padding-bottom: 20%; 
   margin-bottom: 2%;
@@ -479,7 +479,7 @@ input[type="checkbox"]{
   display: flex;
   justify-content: center;
   width: 200px;
-  height: 200px;
+  height: 300px;
   width: 30%;
   padding-bottom: 20%; 
   margin-bottom: 2%;
@@ -489,15 +489,39 @@ input[type="checkbox"]{
   display: flex;
   justify-content: center;
   width: 200px;
-  height: 200px;
+  height: 300px;
   width: 30%;
   padding-bottom: 20%; 
   margin-bottom: 2%;
 }
+#products-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(12, 12, 12,0.5);
+  padding: 15px;
+  border-radius: 20px;
+  row-gap: 20px;
+}
+
+.product-image {
+  border: 1px solid;
+  border-radius: 20px;
+  height: 175px;
+}
+
+
 /*det som visas när man hovrar över bilderna*/
 .display {
   opacity: 0;
   margin-top: 1,5%;
+  margin-right: 12px;
   height: 400px;
   width: 370px;
   position: absolute;
@@ -698,4 +722,24 @@ form {
   width: 99vw;
   border: 3px solid black;
   height: 500px;
+}
+
+.product-image {
+  border: 1px solid;
+  border-radius: 20px;
+  height: 175px;
+}
+
+
+
+#cart-header {
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.cart {
+  max-width: 20vw
+}
+
+#clear-cart-button {
+  height: 30px
 }

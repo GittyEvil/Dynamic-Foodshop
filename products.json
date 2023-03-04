@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "title": "Orange chicken",
+      "description": "mat",
+      "price": 150,
+      "image": [
+        "\\images\\orange_chicken.png"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "kyckling mat",
+      "description": "mat",
+      "price": 150,
+      "image": [
+        "\\images\\guay.png"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "fried rice",
+      "description": "mat",
+      "price": 150,
+      "image": [
+        "\\images\\kaopad.png"
+      ]
+    },  {
+      "id": 4,
+      "title": "Pad Thai",
+      "description": "mat",
+      "price": 150,
+      "image": [
+        "\\images\\tom-yum-goong.png"
+      ]
+    },  {
+      "id": 5,
+      "title": "rice noodle",
+      "description": "mat",
+      "price": 150,
+      "image": [
+        "\\images\\food.png"
+      ]
+    }, {
+      "id": 6,
+      "title": "ris curry",
+      "description": "mat",
+      "price": 150,
+      "image": [
+        "\\images\\Minced-Pork-Stir-Fried-with-Thai-Basil.png"
+      ]
+    }
+]
