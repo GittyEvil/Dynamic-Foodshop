@@ -25,7 +25,8 @@
       "image": [
         "\\images\\kaopad.png"
       ]
-    },  {
+    },  
+    {
       "id": 4,
       "title": "Pad Thai",
       "description": "mat",
@@ -33,7 +34,8 @@
       "image": [
         "\\images\\tom-yum-goong.png"
       ]
-    },  {
+    },  
+    {
       "id": 5,
       "title": "rice noodle",
       "description": "mat",
@@ -41,7 +43,8 @@
       "image": [
         "\\images\\food.png"
       ]
-    }, {
+    }, 
+    {
       "id": 6,
       "title": "ris curry",
       "description": "mat",

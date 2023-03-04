@@ -11,8 +11,8 @@ router.get('/', function(req, res, next) {
       productsCart = JSON.parse(productData);
 
     } catch (err) {
-        console.log('du har inga items')
-        return;
+      res.json({ message: 'inga items' })
+      return;
     }
     result = productsCart.filter(item => item.x == userId);
 

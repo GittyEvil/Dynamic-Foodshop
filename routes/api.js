@@ -21,6 +21,7 @@ router.get('/cart', function(req, res, next) {
 router.get('/cart/clear', function(req, res, next) {
   var userId = "testUser"
   var result = []
+  console.log(result)
 
   try {
     var rawData = fs.readFileSync('cartitems.json');
@@ -38,8 +39,5 @@ router.get('/cart/clear', function(req, res, next) {
   res.json({ message: 'Success' })
 });
 
-router.post('',function(req,res,next) {
-  
-})
 
 module.exports = router;
