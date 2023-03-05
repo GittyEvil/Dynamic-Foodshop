@@ -1,10 +1,10 @@
 [
-    {
-      "id": 1,
-      "title": "Orange chicken",
-      "description": "mat",
-      "price": 150,
-      "image": ["\\images\\orange_chicken.png"],
-      "userId": "testUser2"
-    }
+  {
+    "id": 1,
+    "title": "Orange chicken",
+    "description": "mat",
+    "price": 150,
+    "image": ["\\images\\orange_chicken.png"],
+    "userId": "testUser2"
+  }
 ]

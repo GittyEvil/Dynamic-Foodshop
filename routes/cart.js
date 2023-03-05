@@ -6,14 +6,13 @@ const fs = require('fs');
 router.get('/', function(req, res, next) {
   var result = [];
   var userId = "testUser";
-    try {
-      var productData = fs.readFileSync('cartitems.json');
-      productsCart = JSON.parse(productData);
-
-    } catch (err) {
-      res.json({ message: 'inga items' })
-      return;
-    }
+  
+  try {
+    const productData = fs.readFileSync('cartitems.json');
+    productsCart = JSON.parse(productData);
+  } catch (error) {
+    console.error('inga items');
+  }
     result = productsCart.filter(item => item.x == userId);
 
   if(req.session.userid) {
