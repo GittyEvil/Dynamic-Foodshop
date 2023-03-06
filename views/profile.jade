@@ -20,7 +20,7 @@ block content
           a(href='/profile') Profil
           a(href='#') Logga ut
       .navitem-1
-        a(href='/contacts') Contacts
+        a(href='/contact') Contacts
       .navitem-2
         a(href='/') Home
       .navitem-3
@@ -36,22 +36,34 @@ block content
     // kroppen för varje sida
     .body
       .displaySite
-        p  Dina beställningar
-      // visar en enkel beställning
-      .Orderbox
-        .orderlist
-          p(style='margin: 20px;')
-            | Dina beställningar:
+        p  Kontakta oss
+      // hela boxen som håller allt för contacts
+      .contactbox
+        form(id="profile-form", action="/profile", method="post")
+        label(for='username') Username:
+        input#username(type='text' placerholder="name" name='username')
+        br
+        
+        label(for='password') Password:
+        input#password(type='password',placeholder="password" name='password')
+        br
+        
+        button#forgot-password(type='button') Forgot password?
+        br
+        
+        #new-password(style='display: none;')
+            label(for='new-password-input') new password:
             br
-            |  Pad Thai x2
-          br
-          p(style=' margin: 400px; display: flex; justify-content: flex-end;')
-            | Total:240kr
-        .orderlist1
-          .(style='margin: 20px;' class='beställning')
-            img(style='width:400px; height:300px; border-radius: 25px;' src='/images/padthai.png')
-            p(style='margin: 20px;') Ordernummer: 4fN456hpg566
-    // social media knapparna
+            input#new-password-input(type='password', placeholder="Confirm new Password" name='new-password-input')
+            br
+            label(for='confirm-new-password-input') confirm password: 
+            br 
+            input(id="confirm-password", type="password", placeholder="Confirm new Password", required)
+            
+        button(type='submit') Submit
+
+        script(src="/javascripts/profile.js")
+    // social knapparna
     .wrapper
       .icon.facebook
         .tooltip
@@ -89,7 +101,7 @@ block content
         p Etherium
       .footitem4
         p För kunden:
-        a(href='contact.html') Registrera dig här!
+        a(href='#Förnamn') Registrera dig här!
         p Varukorg
         p Profil
 // footer
