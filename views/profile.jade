@@ -39,30 +39,17 @@ block content
         p  Kontakta oss
       // hela boxen som håller allt för contacts
       .contactbox
-        form(id="profile-form", action="/profile", method="post")
-        label(for='username') Username:
-        input#username(type='text' placerholder="name" name='username')
-        br
+        form(action="/profile", method="post")
+        input(type="text", placeholder="Username", name="old_username", required)
+        input(type="password", placeholder="Password", name="old_password", required)
         
-        label(for='password') Password:
-        input#password(type='password',placeholder="password" name='password')
-        br
-        
-        button#forgot-password(type='button') Forgot password?
-        br
-        
-        #new-password(style='display: none;')
-            label(for='new-password-input') new password:
-            br
-            input#new-password-input(type='password', placeholder="Confirm new Password" name='new-password-input')
-            br
-            label(for='confirm-new-password-input') confirm password: 
-            br 
-            input(id="confirm-password", type="password", placeholder="Confirm new Password", required)
+        input(id="new_password" type="password", placeholder="new Password", name="new password", required)         
+        input(id="confirm_password" type="password", placeholder="Confirm new Password", name="confirm password" required)
             
         button(type='submit') Submit
-
+        p= errorMsg
         script(src="/javascripts/profile.js")
+        
     // social knapparna
     .wrapper
       .icon.facebook

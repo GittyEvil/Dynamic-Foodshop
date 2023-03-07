@@ -1,3 +1,4 @@
+/*
 function RedoPassword() {
     document.getElementById("inlogg").innerHTML = "YOU CLICKED ME!";
     console.log(klickad)
@@ -10,3 +11,4 @@ forgotPasswordButton.addEventListener("click", function() {
   newPasswordInput.style.display = "block";
 });
 
+*/
