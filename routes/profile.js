@@ -35,16 +35,18 @@ router.post('/',function(req,res,next) {
 
     
     for(var i=0; i< users; i++) {
-        if(req.session.username == jsonData[i].username && jsonData[i].password == req.session.password
-           && jsonData[i].gmail == req.session.gmail){
-          var oldmail = jsonData[i].gmail;
-          var oldusername = jsonData[i].gmail;
+        if(req.session.username == users[i].username && users[i].password == req.session.password
+           && users[i].gmail == req.session.gmail){
+          var oldmail = users[i].gmail;
+          var oldusername = users[i].gmail;
           var NewUserInformation = {
             username:req.body.username,
             password:req.body.password,
             email:req.body.email
         }
         
+
+    
       }
     }
     
