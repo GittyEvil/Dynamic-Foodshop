@@ -42,13 +42,13 @@ block content
         form(action="/profile", method="post")
         input(type="text", placeholder="Username", name="old_username", required)
         input(type="password", placeholder="Password", name="old_password", required)
+        input(type="text", placeholder="gmail", name="gmail", required)
         
         input(id="new_password" type="password", placeholder="new Password", name="new password", required)         
         input(id="confirm_password" type="password", placeholder="Confirm new Password", name="confirm password" required)
             
         button(type='submit') Submit
         p= errorMsg
-        script(src="/javascripts/profile.js")
         
     // social knapparna
     .wrapper
