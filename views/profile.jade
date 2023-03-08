@@ -1,94 +1,12 @@
 extends layout
 
 block content
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title Document
-    link(rel='stylesheet' href='style.css')
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
-  body
-    // Navigation bar för sidorna
-    .navcontainer
-      .navitem-0
-        a(href='/chooseaccount')
-      .dropdown
-        a(href='/chooseaccount')
-          img(style='width: 50px; height: 50px;' src='/images/character.png')
-        .dropdown-content
-          a(href='/profile') Profil
-          a(href='#') Logga ut
-      .navitem-1
-        a(href='/contact') Contacts
-      .navitem-2
-        a(href='/') Home
-      .navitem-3
-        a(href='/')
-          img(style='width: 150px; height: 105px;' src='/images/SoggyEats.png')
-      .navitem-4
-        a(href='/menu') Menu
-      .navitem-5
-        a(href='/myOrder') My Orders
-      .navitem-6
-        a(href='/cart')
-          img(style='width:50px; height:50px ;' src='/images/shop.png')
-    // kroppen för varje sida
-    .body
-      .displaySite
-        p  Kontakta oss
-      // hela boxen som håller allt för contacts
-      .contactbox
-        form(action="/profile", method="post")
+ head
+ body
+    form(action="/profile", method="post")
         input(type="text", placeholder="Username", name="old_username", required)
         input(type="password", placeholder="Password", name="old_password", required)
         input(type="text", placeholder="gmail", name="gmail", required)
-        
-        input(id="new_password" type="password", placeholder="new Password", name="new password", required)         
-        input(id="confirm_password" type="password", placeholder="Confirm new Password", name="confirm password" required)
-            
+        input(type="password", placeholder="new Password", name="password", required)           
         button(type='submit') Submit
         p= errorMsg
-        
-    // social knapparna
-    .wrapper
-      .icon.facebook
-        .tooltip
-          | Facebook
-        span
-          i.fab.fa-facebook-f
-      .icon.twitter
-        .tooltip
-          | Twitter
-        span
-          i.fab.fa-twitter
-      .icon.instagram
-        .tooltip
-          | Instagram
-        span
-          i.fab.fa-instagram
-    .footer
-      .footitem1
-        p Kontakt:
-        p Gmail: Soggyeats.info@gmail.com
-        p Phone number: 073492469
-        img(src='/images/skull.png')
-      .footitem2
-        p Om oss:
-        p Vi är en Mathemsida som älskar asiatisk mat,
-        p Hoss oss kan du beställa massor av olika asiatiska rätter.
-        p Vi levererar hem till din dörr på nolltid.
-      .footitem3
-        p Betalningsmetoder:
-        p Mastercard
-        p Visa
-        p Maestro
-        p Paypal
-        p Swish
-        p Etherium
-      .footitem4
-        p För kunden:
-        a(href='#Förnamn') Registrera dig här!
-        p Varukorg
-        p Profil
-// footer
