@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next){
   var jsonData = null
-
+  //läser filen 
   try {
       var data = fs.readFileSync("C:\\Users\\adrian.stude\\Documents\\Prog2\\Dynamic-Foodshop\\user.json","utf-8")
       jsonData = JSON.parse(data);
@@ -24,12 +24,16 @@ router.post('/', function(req, res, next){
     console.log('error')
     return;
   }
-
+  //tar info från input och jämför, stämmer det med info i json fil och det som skrevs blir du inloggad
   var username = (req.body.username)
   var password = (req.body.password)
+  var gmail = (req.body.gmail)
+  req.session.username = username;
+  req.session.password = password;
+  req.session.gmail = gmail;
 
   for(i= 0; i < jsonData.length; i++) {
-    if(username == jsonData[i].username && jsonData[i].password == password){
+    if(username == jsonData[i].username && jsonData[i].password == password && jsonData[i].gmail == gmail){
       
         req.session.userid = username;   
         res.redirect("/")

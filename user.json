@@ -2,23 +2,28 @@
     {
         "username": "adrian",
         "password": "1234",
+        "gmail":"adrian.stude@gmail.com",
         "id": "000001"
 
     },
     {
         "username": "olle",
+        "gmail":"adrian.stude@gmail.com",
         "password": "12"
     },
     {
         "username": "stolle",
+        "gmail":"adrian.stude@gmail.com",
         "password": "123"
     },
     {
         "username": "anton124",
+        "gmail":"adrian.stude@gmail.com",
         "password": "12344d"
     },
     {
         "username": "ossian",
+        "gmail":"adrian.stude@gmail.com",
         "password": "2455"
     }
 ]

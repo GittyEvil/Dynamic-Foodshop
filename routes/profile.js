@@ -33,57 +33,21 @@ router.post('/',function(req,res,next) {
         return;
     }
 
-    /*
-    for(var i =0; i< users; i++) {
-      if(user.id = users.id[user]) {
-        ExistingUser = user;
-     }
-    }
-    */
-
-    for(const user of users ) {
-        if(user.id = "000001") {
-          ExistingUser = user;
-          Console.log('lyckades hitta användare')
-        }
-    }
-
-
-    if(ExistingUser != req.body.old_password) {
-        console.log('fel i lösen')
-        res.render("profile", Object.assign(ExistingUser, {errorMsg:"ditt lösenord stämmer inte"}))
-    }else {
-        var NewUserInformation = {
+    
+    for(var i=0; i< users; i++) {
+        if(req.session.username == jsonData[i].username && jsonData[i].password == req.session.password
+           && jsonData[i].gmail == req.session.gmail){
+          var oldmail = jsonData[i].gmail;
+          var oldusername = jsonData[i].gmail;
+          var NewUserInformation = {
             username:req.body.username,
             password:req.body.password,
-            //email:req.body.email
-        }
-        console.log('lyckades med lösen')
-        addUser("000001",NewUserInformation, users)
-
-        save(users)
-        if(!uppdateradInfo) {
-            res.render('profile', Object.assign(NewUserInformation, {errorMsg:"profil uppdaterad"}))
-            console.log('lyckas')
+            email:req.body.email
         }
         
-
+      }
     }
-});
-
-//funktionen hanterar tillägg av användare?
-function addUser(id, userToAdd, usersList) {
-    var objIndex = usersList.findIndex((obj => obj.id == id));
-  
-    usersList[objIndex] = userToAdd
-    usersList[objIndex].id = id;
     
-    console.log(usersList)
-  }
-  //funktionen hanterar sparandet av den nya användarens listinformation
-  function save(usersList) {
-    let dataToSave = JSON.stringify(usersList);
-      fs.writeFileSync('user.json', dataToSave);
-  }
+});
 
 module.exports = router;
