@@ -22,8 +22,8 @@ router.post('/', function(req, res, next){
   //tar input från användare när de skriver in
   var userInput = {
     username: (req.body.username),
-    password: (req.body.password),
-    gmail: (req.body.gmail)
+    gmail: (req.body.gmail),
+    password: (req.body.password)
   }
   //skickar in i listan(där filen lästes)
   newUsers.push(userInput)

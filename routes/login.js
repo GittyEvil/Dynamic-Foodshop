@@ -26,14 +26,14 @@ router.post('/', function(req, res, next){
   }
   //tar info från input och jämför, stämmer det med info i json fil och det som skrevs blir du inloggad
   var username = (req.body.username)
-  var password = (req.body.password)
   var gmail = (req.body.gmail)
+  var password = (req.body.password)
   req.session.username = username;
-  req.session.password = password;
   req.session.gmail = gmail;
+  req.session.password = password;
 
   for(i= 0; i < jsonData.length; i++) {
-    if(username == jsonData[i].username && jsonData[i].password == password && jsonData[i].gmail == gmail){
+    if(username == jsonData[i].username && jsonData[i].gmail == gmail && jsonData[i].password == password ){
       
         req.session.userid = username;   
         res.redirect("/")

@@ -34,13 +34,11 @@ router.post('/',function(req,res,next) {
     }
 
     
-    for(var i=0; i< users; i++) {
+    for(var i=0; i< users.length; i++) {
         console.log('inne i loop')
         if(req.session.username == users[i].username && users[i].password == req.session.password
            && users[i].gmail == req.session.gmail){
             console.log('lyckades')
-          var oldmail = users[i].gmail;
-          var oldusername = users[i].gmail;
 
           //req.body.username
           //req.body.username
@@ -48,19 +46,23 @@ router.post('/',function(req,res,next) {
 
           //behöver fixa något som byter ut den gamla infon och ger den nya
           var NewUserInformation = {
-            //username:req.body.username,
+            username:req.body.username,
+            email:req.body.gmail,
             password:req.body.password,
-            email:req.body.email
+            
         }
         
-          users[i].push(NewUserInformation)
+          users[i] = NewUserInformation
 
 
-          let uppdateraInfo = JSON.stringify(users[i])
-
-          fs.writeFileSync('user.json', uppdateraInfo)
-          res.render('profile',{message: "profil bytt"})
+          
       }
+      let uppdateraInfo = JSON.stringify(users)
+
+      console.log(NewUserInformation)
+
+      fs.writeFileSync('user.json', uppdateraInfo)
+      res.render('profile',{message: "profil bytt"})
     }
     
 });

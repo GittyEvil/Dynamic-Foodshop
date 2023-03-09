@@ -1,27 +1,17 @@
 [
     {
         "username": "adrian",
-        "password": "1234",
-        "gmail":"adrian.stude@gmail.com"
+        "email": "adde@gmail.com",
+        "password": "12345"
     },
     {
-        "username": "olle",
-        "gmail":"adrian.stude@gmail.com",
-        "password": "12"
-    },
-    {
-        "username": "stolle",
-        "gmail":"adrian.stude@gmail.com",
+        "username": "adrian",
+        "email": "adde@gmail.com",
         "password": "123"
     },
     {
-        "username": "anton124",
-        "gmail":"adrian.stude@gmail.com",
-        "password": "12344d"
-    },
-    {
-        "username": "ossian",
-        "gmail":"adrian.stude@gmail.com",
-        "password": "2455"
+        "username": "adrian",
+        "gmail": "adi@gmail.com",
+        "password": "1234"
     }
 ]
